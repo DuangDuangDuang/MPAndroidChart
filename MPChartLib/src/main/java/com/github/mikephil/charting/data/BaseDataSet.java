@@ -138,7 +138,12 @@ public abstract class BaseDataSet<T extends Entry> implements IDataSet<T> {
 
     @Override
     public int getColor(int index) {
-        return mColors.get(index % mColors.size());
+        if(mColors.size()>0){
+            return mColors.get(index % mColors.size());
+        }else{
+            return null;
+        }
+        
     }
 
     /**
@@ -322,7 +327,12 @@ public abstract class BaseDataSet<T extends Entry> implements IDataSet<T> {
 
     @Override
     public int getValueTextColor(int index) {
-        return mValueColors.get(index % mValueColors.size());
+        if(mValueColors.size()>0){
+            return mValueColors.get(index % mValueColors.size());
+        }else{
+            return null;
+        }
+        
     }
 
     @Override
